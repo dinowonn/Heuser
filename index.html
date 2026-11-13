@@ -1,13 +1,468 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star Seeker</title>
-   <link rel="stylesheet" href="CS_CRP/Homework_6/style.css">
-  </head>
-  <body>
-    <canvas id="gameCanvas" width="800" height="600"></canvas>
-    <script src="CS_CRP/Homework_6/script.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laiba Kashif — Portfolio</title>
+
+  <!-- Google Font: Comfortaa -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <main class="scene" id="scene">
+
+    <!-- ═══════════════════════════════════════════
+         DECORATIVE DOODLE STARS
+         ═══════════════════════════════════════════ -->
+
+    <!-- Star 1 — top-left area -->
+    <div class="deco deco-star star-1" aria-hidden="true">
+      <svg viewBox="0 0 50 50" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M25,3 L29,18 L46,19 L33,29 L38,46 L25,36 L12,46 L17,29 L4,19 L21,18 Z"/>
+      </svg>
+    </div>
+
+    <!-- Star 2 — top-right area -->
+    <div class="deco deco-star star-2" aria-hidden="true">
+      <svg viewBox="0 0 50 50" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M25,4 L30,19 L47,18 L34,29 L39,45 L25,35 L11,45 L16,28 L3,18 L20,19 Z"/>
+      </svg>
+    </div>
+
+    <!-- Star 3 — bottom-right -->
+    <div class="deco deco-star star-3" aria-hidden="true">
+      <svg viewBox="0 0 50 50" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M25,3 L29,18 L46,19 L33,29 L38,46 L25,36 L12,46 L17,29 L4,19 L21,18 Z"/>
+      </svg>
+    </div>
+
+    <!-- Star 4 — bottom-left -->
+    <div class="deco deco-star star-4" aria-hidden="true">
+      <svg viewBox="0 0 50 50" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M25,4 L30,19 L47,18 L34,29 L39,45 L25,35 L11,45 L16,28 L3,18 L20,19 Z"/>
+      </svg>
+    </div>
+
+    <!-- Star 5 — mid-left -->
+    <div class="deco deco-star star-5" aria-hidden="true">
+      <svg viewBox="0 0 50 50" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M25,3 L29,18 L46,19 L33,29 L38,46 L25,36 L12,46 L17,29 L4,19 L21,18 Z"/>
+      </svg>
+    </div>
+
+    <!-- Star 6 — mid-right -->
+    <div class="deco deco-star star-6" aria-hidden="true">
+      <svg viewBox="0 0 50 50" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M25,4 L30,19 L47,18 L34,29 L39,45 L25,35 L11,45 L16,28 L3,18 L20,19 Z"/>
+      </svg>
+    </div>
+
+    <!-- Chevron doodle 1 (cat-ear shape) -->
+    <div class="deco deco-chevron chev-1" aria-hidden="true">
+      <svg viewBox="0 0 30 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4,18 L15,4 L26,18"/>
+      </svg>
+    </div>
+
+    <!-- Chevron doodle 2 -->
+    <div class="deco deco-chevron chev-2" aria-hidden="true">
+      <svg viewBox="0 0 30 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4,18 L15,4 L26,18"/>
+      </svg>
+    </div>
+
+    <!-- Chevron doodle 3 -->
+    <div class="deco deco-chevron chev-3" aria-hidden="true">
+      <svg viewBox="0 0 30 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4,18 L15,4 L26,18"/>
+      </svg>
+    </div>
+
+    <!-- Sparkle mark 1 (small +) -->
+    <div class="deco deco-sparkle sparkle-1" aria-hidden="true">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="10" y1="2" x2="10" y2="18"/>
+        <line x1="2" y1="10" x2="18" y2="10"/>
+      </svg>
+    </div>
+
+    <!-- Sparkle mark 2 -->
+    <div class="deco deco-sparkle sparkle-2" aria-hidden="true">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="10" y1="2" x2="10" y2="18"/>
+        <line x1="2" y1="10" x2="18" y2="10"/>
+      </svg>
+    </div>
+
+    <!-- Tilde / wave doodle -->
+    <div class="deco deco-wave wave-1" aria-hidden="true">
+      <svg viewBox="0 0 40 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <path d="M2,8 Q10,2 20,8 Q30,14 38,8"/>
+      </svg>
+    </div>
+
+    <div class="deco deco-wave wave-2" aria-hidden="true">
+      <svg viewBox="0 0 40 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <path d="M2,8 Q10,2 20,8 Q30,14 38,8"/>
+      </svg>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════
+         DECORATIVE OBJECTS
+         ═══════════════════════════════════════════ -->
+
+    <!-- Book stack — left side -->
+    <div class="deco deco-object deco-books-stack" aria-hidden="true">
+      <svg viewBox="0 0 100 85" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Bottom book -->
+        <g transform="rotate(-5, 45, 62)">
+          <rect x="8" y="54" width="74" height="16" rx="2"/>
+          <line x1="15" y1="54" x2="15" y2="70"/>
+        </g>
+        <!-- Middle book -->
+        <g class="book-middle" transform="rotate(3, 47, 42)">
+          <rect x="12" y="34" width="68" height="16" rx="2"/>
+          <line x1="19" y1="34" x2="19" y2="50"/>
+        </g>
+        <!-- Top book -->
+        <g transform="rotate(-2, 42, 22)">
+          <rect x="10" y="14" width="62" height="16" rx="2"/>
+          <line x1="17" y1="14" x2="17" y2="30"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- CD Player / Boombox — top-right area -->
+    <div class="deco deco-object deco-cd-player" aria-hidden="true">
+      <svg viewBox="0 0 120 90" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Handle -->
+        <path d="M35,18 Q60,2 85,18"/>
+        <!-- Main body -->
+        <rect x="15" y="18" width="90" height="55" rx="6"/>
+        <!-- Left speaker -->
+        <circle cx="42" cy="48" r="15"/>
+        <circle cx="42" cy="48" r="6"/>
+        <!-- Right speaker -->
+        <circle cx="78" cy="48" r="15"/>
+        <circle cx="78" cy="48" r="6"/>
+        <!-- Spinning disc inside left speaker -->
+        <circle class="cd-disc" cx="42" cy="48" r="10" stroke-dasharray="3 3"/>
+        <!-- Display -->
+        <rect x="54" y="24" width="18" height="8" rx="2"/>
+        <!-- Buttons -->
+        <circle cx="57" cy="38" r="2" fill="currentColor"/>
+        <circle cx="63" cy="38" r="2" fill="currentColor"/>
+        <circle cx="69" cy="38" r="2" fill="currentColor"/>
+        <!-- Antenna -->
+        <line x1="95" y1="18" x2="102" y2="5"/>
+        <circle cx="102" cy="5" r="2" fill="currentColor"/>
+      </svg>
+    </div>
+
+    <!-- Anime figurine — right side -->
+    <div class="deco deco-object deco-figurine" aria-hidden="true">
+      <svg viewBox="0 0 70 110" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Stand / base -->
+        <ellipse cx="35" cy="104" rx="18" ry="5"/>
+        <path d="M17,104 L20,97 L50,97 L53,104"/>
+
+        <!-- Legs -->
+        <line x1="30" y1="97" x2="29" y2="82"/>
+        <line x1="40" y1="97" x2="41" y2="82"/>
+
+        <!-- Body / dress (A-line shape) -->
+        <path d="M24,82 L22,60 Q22,54 30,50"/>
+        <path d="M46,82 L48,60 Q48,54 40,50"/>
+        <!-- Dress hem detail -->
+        <path d="M24,82 Q35,86 46,82"/>
+        <!-- Waist detail -->
+        <path d="M26,68 Q35,71 44,68" stroke-width="1.5"/>
+
+        <!-- Head (big for chibi proportions) -->
+        <circle cx="35" cy="35" r="16"/>
+
+        <!-- Hair outline -->
+        <path d="M19,33 Q15,16 25,9 Q35,3 45,9 Q55,16 51,33"/>
+        <!-- Twin tails -->
+        <path d="M19,31 Q12,40 14,56" stroke-width="2.5"/>
+        <path d="M51,31 Q58,40 56,56" stroke-width="2.5"/>
+        <!-- Bangs -->
+        <path d="M22,28 Q27,21 31,28"/>
+        <path d="M30,26 Q35,19 40,26"/>
+        <path d="M39,28 Q44,21 48,28"/>
+
+        <!-- Eyes (large anime eyes) -->
+        <ellipse cx="28" cy="36" rx="4" ry="5" fill="currentColor"/>
+        <ellipse cx="42" cy="36" rx="4" ry="5" fill="currentColor"/>
+        <!-- Eye shine highlights -->
+        <circle cx="30" cy="34" r="1.5" fill="#643a71"/>
+        <circle cx="44" cy="34" r="1.5" fill="#643a71"/>
+
+        <!-- Mouth -->
+        <path d="M32,44 Q35,47 38,44" stroke-width="1.5"/>
+
+        <!-- Arms -->
+        <path d="M22,58 L14,66"/>
+        <path d="M48,58 L56,66"/>
+      </svg>
+    </div>
+
+    <!-- Single book — bottom area -->
+    <div class="deco deco-object deco-single-book" aria-hidden="true">
+      <svg viewBox="0 0 80 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Book body (lying flat) -->
+        <rect x="4" y="3" width="72" height="24" rx="2"/>
+        <!-- Spine -->
+        <line x1="4" y1="8" x2="76" y2="8"/>
+        <!-- Page edges -->
+        <line x1="12" y1="27" x2="68" y2="27" stroke-width="0.8" opacity="0.5"/>
+        <line x1="12" y1="25" x2="68" y2="25" stroke-width="0.8" opacity="0.5"/>
+      </svg>
+    </div>
+
+    <!-- ─── Three Cats (#5863f8) ─── -->
+
+    <!-- Cat 1: Lounging / Sleeping Cat (top left perched near star & books) -->
+    <div class="deco deco-object deco-cat cat-1" aria-hidden="true">
+      <svg viewBox="0 0 70 45" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Body curled sleeping -->
+        <ellipse cx="32" cy="28" rx="22" ry="13"/>
+        <!-- Head -->
+        <circle cx="50" cy="20" r="10"/>
+        <!-- Ears -->
+        <polygon points="46,12 50,4 54,11"/>
+        <polygon points="53,12 58,6 60,14"/>
+        <!-- Sleeping eyes -->
+        <path d="M46,20 Q49,23 52,20"/>
+        <path d="M53,20 Q56,23 58,20"/>
+        <!-- Nose & mouth -->
+        <path d="M52,24 L52,25 Q50,27 48,26 M52,25 Q54,27 56,26"/>
+        <!-- Whiskers -->
+        <line x1="42" y1="22" x2="36" y2="21"/>
+        <line x1="42" y1="25" x2="35" y2="26"/>
+        <line x1="60" y1="22" x2="66" y2="21"/>
+        <line x1="60" y1="25" x2="67" y2="26"/>
+        <!-- Tail curled along body -->
+        <path d="M10,28 Q6,14 14,14 Q18,14 16,22" stroke-width="2.2"/>
+      </svg>
+    </div>
+
+    <!-- Cat 2: Sitting Upright Curious Cat (bottom right looking up) -->
+    <div class="deco deco-object deco-cat cat-2" aria-hidden="true">
+      <svg viewBox="0 0 50 65" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Body -->
+        <ellipse cx="25" cy="42" rx="14" ry="18"/>
+        <!-- Paws -->
+        <ellipse cx="18" cy="58" rx="5" ry="3"/>
+        <ellipse cx="32" cy="58" rx="5" ry="3"/>
+        <!-- Head -->
+        <circle cx="25" cy="20" r="12"/>
+        <!-- Ears -->
+        <polygon points="15,14 19,4 23,10"/>
+        <polygon points="27,10 31,4 35,14"/>
+        <!-- Eyes open curious -->
+        <circle cx="20" cy="18" r="2" fill="currentColor"/>
+        <circle cx="30" cy="18" r="2" fill="currentColor"/>
+        <!-- Nose/Mouth -->
+        <path d="M25,23 L25,24 Q23,26 21,25 M25,24 Q27,26 29,25"/>
+        <!-- Whiskers -->
+        <line x1="14" y1="21" x2="6" y2="20"/>
+        <line x1="14" y1="24" x2="7" y2="25"/>
+        <line x1="36" y1="21" x2="44" y2="20"/>
+        <line x1="36" y1="24" x2="43" y2="25"/>
+        <!-- Tail swishing -->
+        <path class="cat-tail" d="M37,50 Q48,46 44,32" stroke-width="2.5"/>
+      </svg>
+    </div>
+
+    <!-- Cat 3: Playful Loafing / Peeking Cat (bottom mid-left near central area) -->
+    <div class="deco deco-object deco-cat cat-3" aria-hidden="true">
+      <svg viewBox="0 0 65 50" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Body loaf -->
+        <path d="M12,40 Q10,24 28,24 Q50,24 54,34 Q56,42 45,42 L16,42 Q12,42 12,40 Z"/>
+        <!-- Head tilted slightly -->
+        <circle cx="46" cy="22" r="11"/>
+        <!-- Ears -->
+        <polygon points="40,14 43,4 47,12"/>
+        <polygon points="50,13 56,6 57,16"/>
+        <!-- Playful wink/eyes -->
+        <circle cx="42" cy="20" r="1.8" fill="currentColor"/>
+        <path d="M49,20 Q52,17 55,20" stroke-width="1.8"/>
+        <!-- Nose and mouth -->
+        <path d="M47,24 Q45,27 43,26 M47,24 Q49,27 51,26"/>
+        <!-- Whiskers -->
+        <line x1="36" y1="22" x2="28" y2="21"/>
+        <line x1="36" y1="25" x2="29" y2="27"/>
+        <line x1="56" y1="22" x2="64" y2="21"/>
+        <line x1="56" y1="25" x2="63" y2="27"/>
+        <!-- Front paws tucked -->
+        <ellipse cx="36" cy="40" rx="4" ry="2"/>
+        <ellipse cx="44" cy="40" rx="4" ry="2"/>
+      </svg>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════
+         CENTRAL CONTENT
+         ═══════════════════════════════════════════ -->
+
+    <div class="central">
+
+      <!-- Profile photograph with doodle decorations -->
+      <div class="photo-frame">
+        <img
+          src="assets/images/laiba.jpg"
+          alt="Photograph of Laiba Kashif"
+          class="photo"
+          width="250"
+          height="250"
+        >
+        <!-- Small doodle marks around the frame -->
+        <span class="frame-deco fd-star-1" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12,2 L14,9 L21,9 L15,14 L17,21 L12,17 L7,21 L9,14 L3,9 L10,9 Z"/>
+          </svg>
+        </span>
+        <span class="frame-deco fd-star-2" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12,2 L14,9 L21,9 L15,14 L17,21 L12,17 L7,21 L9,14 L3,9 L10,9 Z"/>
+          </svg>
+        </span>
+        <span class="frame-deco fd-chev-1" aria-hidden="true">
+          <svg viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2,10 L9,3 L16,10"/>
+          </svg>
+        </span>
+        <span class="frame-deco fd-chev-2" aria-hidden="true">
+          <svg viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2,10 L9,3 L16,10"/>
+          </svg>
+        </span>
+        <span class="frame-deco fd-sparkle" aria-hidden="true">
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="7" y1="1" x2="7" y2="13"/>
+            <line x1="1" y1="7" x2="13" y2="7"/>
+          </svg>
+        </span>
+      </div>
+
+      <!-- Name -->
+      <h1 class="name">Laiba Kashif</h1>
+
+      <!-- Interactive book button -->
+      <button
+        class="book-btn"
+        id="book-btn"
+        type="button"
+        aria-label="Open about me book"
+        aria-expanded="false"
+        aria-controls="book-overlay"
+      >
+        <svg class="book-icon" viewBox="0 0 80 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- Book cover -->
+          <path d="M15,8 L65,8 Q68,8 68,11 L68,89 Q68,92 65,92 L15,92 Q12,92 12,89 L12,11 Q12,8 15,8 Z"/>
+          <!-- Spine -->
+          <line x1="20" y1="8" x2="20" y2="92"/>
+          <!-- Title lines -->
+          <line x1="30" y1="35" x2="58" y2="35" stroke-width="1.5"/>
+          <line x1="34" y1="45" x2="54" y2="45" stroke-width="1.5"/>
+          <!-- Small star on cover -->
+          <path d="M44,62 L46,68 L52,68 L47,72 L49,78 L44,74 L39,78 L41,72 L36,68 L42,68 Z" stroke-width="1.5"/>
+        </svg>
+        <span class="book-hint">click to open</span>
+      </button>
+
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════
+         BOOK OVERLAY (About & Interests)
+         ═══════════════════════════════════════════ -->
+
+    <div
+      class="book-overlay"
+      id="book-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-label="About Laiba Kashif"
+      hidden
+    >
+      <div class="book-spread" id="book-spread">
+
+        <!-- Left page — About -->
+        <article class="book-page page-left">
+          <h2 class="page-heading">About Me</h2>
+          <div class="page-divider" aria-hidden="true"></div>
+          <p>
+            Hi, I'm <strong>Laiba Kashif</strong>. An AS student at
+            Heuser College with four subjects &mdash; Computer Science,
+            Chemistry, Maths, and Physics.
+          </p>
+
+          <h2 class="page-heading concept-heading">The Concept</h2>
+          <div class="page-divider" aria-hidden="true"></div>
+          <p class="concept-text">
+            The concept is a rather sort of scrapbook, not exactly though, it involves things I like such as : books, cats, anime and music. What is unconventional can not be as such to another person, I think it may tend to be rather subjective. The colours I chose on their own seem fine, but together do not make for a pleasant sight, at least to me and I'm hoping for others too as well. And the link to my homework 7 moves around the screen which is not very usual of a website or a portfolio.
+          </p>
+
+          <!-- Small decorative star on page -->
+          <div class="page-deco" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12,2 L14,9 L21,9 L15,14 L17,21 L12,17 L7,21 L9,14 L3,9 L10,9 Z"/>
+            </svg>
+          </div>
+        </article>
+
+        <!-- Spine / fold line -->
+        <div class="book-spine-line" aria-hidden="true"></div>
+
+        <!-- Right page — Interests & Aspirations -->
+        <article class="book-page page-right">
+          <h2 class="page-heading">Interests</h2>
+          <div class="page-divider" aria-hidden="true"></div>
+          <p>
+            I love reading immensely and enjoy all areas of science,
+            specifically <strong>Astronomy</strong>.
+          </p>
+
+          <h2 class="page-heading aspirations-heading">Aspirations</h2>
+          <div class="page-divider" aria-hidden="true"></div>
+          <p>
+            I aspire and hope to work within the field of Astronomy
+            &mdash; perhaps aerospace engineering or observational
+            astronomy, or a few other fields I have in mind.
+          </p>
+          <!-- Page number -->
+          <span class="page-number" aria-hidden="true">✦</span>
+        </article>
+
+      </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════
+         FLOATING HOMEWORK 7 LINK
+         ═══════════════════════════════════════════ -->
+
+    <a
+      href="https://dinowonn.github.io/Heuser/"
+      class="floating-link"
+      id="floating-link"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Visit my Homework 7 website"
+    >
+      Homework 7 &nearr;
+    </a>
+
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
 </html>
