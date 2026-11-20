@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tomb of Knowledge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="atmosphere" aria-hidden="true">
+    <div class="vignette"></div>
+    <div class="ruled-lines"></div>
+  </div>
+
+  <main class="vault">
+    <header class="masthead">
+      <p class="eyebrow">Inner vault · Open Library</p>
+      <h1>Tomb of Knowledge</h1>
+      <p class="explanation">
+        Tomb of Knowledge is an interactive digital library powered by the Open Library Book Search API. Visitors can search for books and explore details such as titles, authors, publication years and book covers, presented through interactive book cards. Unlike a basic search-results page, Tomb of Knowledge aims to recreate the experience of exploring a digital archive, making book discovery visually engaging and enjoyable.
+      </p>
+    </header>
+
+    <form class="inquiry" id="search-form" role="search">
+      <label for="query">Title or author</label>
+      <div class="inquiry-row">
+        <input
+          id="query"
+          name="query"
+          type="search"
+          placeholder="Ask the stacks for a title or an author"
+          autocomplete="off"
+          required
+        >
+        <button type="submit" id="search-button">Search</button>
+      </div>
+    </form>
+
+    <p class="status" id="status" aria-live="polite">The catalogue is waiting. Enter a title or an author.</p>
+
+    <section class="shelf" id="results" aria-label="Search results"></section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
