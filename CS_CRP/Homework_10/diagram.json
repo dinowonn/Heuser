@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "author": "Heuser College Homework 10",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo1", "top": -200, "left": -260, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo2", "top": -60, "left": -260, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo3", "top": 80, "left": -260, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo4", "top": 220, "left": -260, "attrs": {} },
+    { "type": "wokwi-resistor", "id": "r1", "top": -30, "left": 200, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r2", "top": 30, "left": 200, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r3", "top": 90, "left": 200, "attrs": { "value": "220" } },
+    { "type": "wokwi-rgb-led", "id": "rgb1", "top": 10, "left": 310, "attrs": { "common": "cathode" } }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "servo1:V+", "esp:5V", "red", [ "h20", "v120" ] ],
+    [ "servo2:V+", "esp:5V", "red", [ "h30", "v50" ] ],
+    [ "servo3:V+", "esp:5V", "red", [ "h30", "v-30" ] ],
+    [ "servo4:V+", "esp:5V", "red", [ "h20", "v-100" ] ],
+    [ "servo1:GND", "esp:GND.1", "black", [ "h15", "v90" ] ],
+    [ "servo2:GND", "esp:GND.1", "black", [ "h25", "v30" ] ],
+    [ "servo3:GND", "esp:GND.1", "black", [ "h25", "v-40" ] ],
+    [ "servo4:GND", "esp:GND.1", "black", [ "h15", "v-110" ] ],
+    [ "servo1:PWM", "esp:13", "orange", [ "h40", "v60" ] ],
+    [ "servo2:PWM", "esp:14", "gold", [ "h45", "v10" ] ],
+    [ "servo3:PWM", "esp:18", "orange", [ "h50", "v-15" ] ],
+    [ "servo4:PWM", "esp:19", "yellow", [ "h55", "v-55" ] ],
+    [ "esp:25", "r1:1", "red", [ "h15", "v-40" ] ],
+    [ "r1:2", "rgb1:R", "red", [ "h20" ] ],
+    [ "esp:26", "r2:1", "green", [ "h25", "v0" ] ],
+    [ "r2:2", "rgb1:G", "green", [ "h20" ] ],
+    [ "esp:27", "r3:1", "blue", [ "h35", "v40" ] ],
+    [ "r3:2", "rgb1:B", "blue", [ "h20" ] ],
+    [ "rgb1:COM", "esp:GND.2", "black", [ "v60", "h-140" ] ]
+  ],
+  "dependencies": {}
+}

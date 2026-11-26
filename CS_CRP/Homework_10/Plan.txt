@@ -1,0 +1,53 @@
+HOMEWORK 10 – EMBEDDED PROJECT PLAN
+
+PART 1: PROJECT SELECTION
+
+Project Number: 3
+
+Project Name: Smooth 4-Joint Robotic Arm and Colour Choreographer
+
+Technology: PWM (Pulse Width Modulation) only
+
+Simulator: Wokwi
+
+Microcontroller: ESP32
+
+
+PART 2: PLANNING
+
+1. COMPONENTS REQUIRED
+
+- 1 ESP32 microcontroller
+- 4 servo motors
+- 1 common-cathode RGB LED
+- 3 resistors
+
+
+2. PIN TABLE
+
+Component : ESP32 GPIO Pin 
+
+Servo Motor 1 (Signal) : GPIO 13
+Servo Motor 2 (Signal) : GPIO 14 
+Servo Motor 3 (Signal) : GPIO 18 
+Servo Motor 4 (Signal) : GPIO 19 
+RGB LED (Red) : GPIO 25 
+RGB LED (Green) : GPIO 26
+RGB LED (Blue) : GPIO 27 
+
+
+3. PROJECT EXPLANATION
+
+The project is a simulated four-joint robotic arm controlled by an ESP32 using PWM technology. Four servo motors will work together to perform smooth, coordinated movements using ease-in/ease-out motion rather than sudden position changes. A common-cathode RGB LED will synchronise with the arm's movements and change colours to indicate different stages of its routine. The project will demonstrate PWM through multiple servo movements, coordinated routines and synchronised LED colour changes.
+
+
+4. THREE MILESTONES
+
+Milestone 1: Circuit Setup
+Connect the four servo motors and RGB LED to the ESP32 and test that each component works.
+
+Milestone 2: Programming and Functionality
+Implement smooth servo movements, coordinated four-joint routines and synchronised RGB LED colour changes.
+
+Milestone 3: Testing and Finalisation
+Test the complete project, fix errors, polish the code and capture proof of the simulation working.

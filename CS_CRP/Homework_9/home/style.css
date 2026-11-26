@@ -62,7 +62,7 @@ body {
 .hall {
   position: relative;
   z-index: 1;
-  max-width: 1080px;
+  max-width: 1140px;
   margin: 0 auto;
   padding: 4.5rem 1.5rem 3rem;
 }
@@ -133,8 +133,8 @@ h1 {
 
 .wings {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.35rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
 }
 
 .card {
@@ -213,7 +213,7 @@ h1 {
 .card h2 {
   margin: 0;
   font-family: var(--serif);
-  font-size: 1.85rem;
+  font-size: 1.7rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: #e7e2d8;
@@ -222,7 +222,7 @@ h1 {
 .card p {
   margin: 0.55rem 0 0;
   color: var(--slate);
-  font-size: 0.98rem;
+  font-size: 0.95rem;
 }
 
 .card-go {
@@ -275,7 +275,13 @@ h1 {
   text-transform: uppercase;
 }
 
-@media (max-width: 860px) {
+@media (max-width: 1040px) {
+  .wings {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
   .hall {
     padding-top: 3rem;
   }

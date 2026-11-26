@@ -83,5 +83,23 @@ def api_files(filename):
     return send_from_directory("api", filename)
 
 
+@app.route("/embedded")
+def embedded_redirect():
+    # /embedded becomes /embedded/ so its relative asset paths work.
+    return redirect("/embedded/")
+
+
+@app.route("/embedded/")
+def embedded_page():
+    # The PWM Robotic Arm and Colour Choreographer page.
+    return send_from_directory("embedded", "index.html")
+
+
+@app.route("/embedded/<path:filename>")
+def embedded_files(filename):
+    # CSS, JavaScript, and other files for the embedded page.
+    return send_from_directory("embedded", filename)
+
+
 if __name__ == "__main__":
     app.run(debug=True)

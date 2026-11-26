@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Embedded Wing · Smooth 4-Joint Robotic Arm &amp; Colour Choreographer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="atmosphere" aria-hidden="true">
+    <div class="vignette"></div>
+    <div class="ruled-lines"></div>
+  </div>
+
+  <main class="vault">
+    <!-- Top Return & Navigation Bar -->
+    <nav class="nav-bar" aria-label="Archive navigation">
+      <a href="/" class="btn btn-secondary">
+        <span class="btn-icon" aria-hidden="true">←</span>
+        <span>Return to Homepage</span>
+      </a>
+      <a href="https://wokwi.com/projects/481763271436010497" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        <span>Open Public Wokwi Project</span>
+        <svg class="btn-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6 3h7v7M13 3L7 9M3 6v7a1 1 0 001 1h7"/>
+        </svg>
+      </a>
+    </nav>
+
+    <!-- Masthead with Metadata & 4-Sentence Project Explanation -->
+    <header class="masthead">
+      <div class="meta-strip">
+        <span class="meta-tag meta-eyebrow">Wing IV · Embedded Project</span>
+        <span class="meta-separator" aria-hidden="true">·</span>
+        <span class="meta-tag meta-tech"><strong>Technology:</strong> PWM (Pulse Width Modulation)</span>
+        <span class="meta-separator" aria-hidden="true">·</span>
+        <span class="meta-tag meta-platform">Platform: ESP32 &amp; Wokwi</span>
+      </div>
+
+      <h1>Smooth 4-Joint Robotic Arm and Colour Choreographer</h1>
+
+      <div class="explanation-box">
+        <p class="explanation-text">
+          The project is a simulated four-joint robotic arm controlled by an ESP32 microcontroller using hardware Pulse Width Modulation (PWM) technology. Four servo motors work together to perform smooth, coordinated dance movements using mathematical cosine ease-in and ease-out interpolation rather than sudden position changes. A common-cathode RGB LED synchronises with the arm's routine, dynamically shifting colours across six distinct choreographic sections. Overall, the system demonstrates advanced PWM control by orchestrating multi-joint mechanical trajectories alongside real-time LED colour modulation.
+        </p>
+      </div>
+
+      <!-- Action Buttons Row -->
+      <div class="action-row">
+        <a href="https://wokwi.com/projects/481763271436010497" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">
+          <span>Launch Wokwi Simulation</span>
+          <svg class="btn-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 3h7v7M13 3L7 9M3 6v7a1 1 0 001 1h7"/>
+          </svg>
+        </a>
+        <a href="/" class="btn btn-secondary btn-large">
+          <span class="btn-icon" aria-hidden="true">←</span>
+          <span>Back to Tomb of Knowledge</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════
+         CIRCUIT SCREENSHOT SHOWCASE
+         ═══════════════════════════════════════════ -->
+    <section class="circuit-showcase-section" aria-labelledby="screenshot-heading">
+      <div class="section-header">
+        <h2 id="screenshot-heading">Running Wokwi Circuit Screenshot</h2>
+        <span class="badge-status">Simulation Capture</span>
+      </div>
+      <p class="section-intro">
+        Captured circuit arrangement in Wokwi, showing the ESP32 DevKit C V4 wired to all four servo joints and the common-cathode RGB LED through three 220 Ω resistors.
+      </p>
+
+      <div class="screenshot-card">
+        <div class="screenshot-wrapper">
+          <img
+            src="wokwicircuit.png"
+            alt="Screenshot of running Wokwi circuit simulation showing ESP32, four servo motors, resistors, and common-cathode RGB LED"
+            class="circuit-image"
+            loading="lazy"
+          >
+        </div>
+        <figcaption class="screenshot-caption">
+          <strong>Figure 1.0:</strong> Hardware circuit topology in Wokwi simulator. The ESP32 drives Servos 1–4 from GPIO 13, 14, 18, and 19 while controlling the RGB LED anodes via GPIO 25 (Red), 26 (Green), and 27 (Blue) through 220 Ω current-limiting resistors.
+        </figcaption>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         INTERACTIVE LIVE WOKWI SIMULATION EMBED
+         ═══════════════════════════════════════════ -->
+    <section class="simulation-section" aria-labelledby="sim-heading">
+      <div class="section-header">
+        <h2 id="sim-heading">Interactive Live Simulation</h2>
+        <a href="https://wokwi.com/projects/481763271436010497" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+          <span>Open Full Wokwi Tab</span>
+          <svg class="btn-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 3h7v7M13 3L7 9M3 6v7a1 1 0 001 1h7"/>
+          </svg>
+        </a>
+      </div>
+      <p class="sim-guide">
+        Click the green <strong>Play / Start Simulation</strong> button inside the embedded simulator below to run the ESP32 firmware, watch the serial monitor output, and observe the four-joint easing choreography and RGB color shifts in real time.
+      </p>
+      <div class="sim-container">
+        <iframe
+          src="https://wokwi.com/projects/481763271436010497"
+          title="Interactive Wokwi ESP32 Robotic Arm Simulation"
+          loading="lazy"
+          allow="autoplay; fullscreen"
+          class="sim-frame"
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         IN-DEPTH TECHNICAL PWM ARCHITECTURE
+         ═══════════════════════════════════════════ -->
+    <section class="pwm-architecture-section" aria-labelledby="pwm-heading">
+      <h2 id="pwm-heading">In-Depth PWM Technology &amp; Signal Architecture</h2>
+      <p class="section-intro">
+        Pulse Width Modulation (PWM) is utilized in two distinct domains in this project: precise pulse-duration timing for mechanical servo positioning, and high-frequency duty-cycle modulation for perceptual color mixing.
+      </p>
+
+      <div class="grid-two">
+        <!-- Servo PWM Mechanics -->
+        <article class="card-detail">
+          <div class="card-title-row">
+            <span class="tech-icon" aria-hidden="true">⚙</span>
+            <h3>1. Positional Servo PWM (50 Hz)</h3>
+          </div>
+          <ul class="pwm-spec-list">
+            <li>
+              <strong>Carrier Frequency:</strong>
+              <span>50 Hz configured via <code>servo.setPeriodHertz(50)</code>, providing a standard 20 ms PWM frame interval.</span>
+            </li>
+            <li>
+              <strong>Pulse Width Mapping:</strong>
+              <span>Attached using <code>servo.attach(pin, 500, 2400)</code>, calibrating 500 µs (0°) to 2400 µs (180°) high pulse durations.</span>
+            </li>
+            <li>
+              <strong>Timer Pool Allocation:</strong>
+              <span>The sketch executes <code>ESP32PWM::allocateTimer(0)</code> through <code>(3)</code> to assign the ESP32's hardware timers to the library's timer pool, allowing the ESP32 PWM peripheral manager to reliably synthesize accurate pulse widths across all four servo lines.</span>
+            </li>
+            <li>
+              <strong>Safety Constraints:</strong>
+              <span>Target angles are software-constrained to safe limits between <code>MIN_ANGLE = 20°</code> and <code>MAX_ANGLE = 160°</code> (centered at 90°), protecting physical brackets from collisions.</span>
+            </li>
+            <li>
+              <strong>Smooth Cosine Easing:</strong>
+              <span>Instead of harsh angular steps, movements are partitioned into 100 interpolation steps (<code>MOVE_STEPS = 100</code>) utilizing the ease-in/ease-out formula:
+                <br>
+                <code>easeInOut(t) = (1.0 - cos(t * PI)) / 2.0</code>
+              </span>
+            </li>
+          </ul>
+        </article>
+
+        <!-- RGB LED LEDC PWM -->
+        <article class="card-detail">
+          <div class="card-title-row">
+            <span class="tech-icon" aria-hidden="true">💡</span>
+            <h3>2. Perceptual LEDC PWM (5 kHz)</h3>
+          </div>
+          <ul class="pwm-spec-list">
+            <li>
+              <strong>Carrier Frequency:</strong>
+              <span>5000 Hz (5 kHz) carrier frequency, operating well beyond the human optical flicker threshold to eliminate strobing.</span>
+            </li>
+            <li>
+              <strong>Resolution &amp; Duty Cycle:</strong>
+              <span>Configured with 8-bit resolution, yielding 256 discrete intensity levels (0 to 255) for precise color calibration.</span>
+            </li>
+            <li>
+              <strong>Core 3.x Direct Binding:</strong>
+              <span>Initialized using ESP32 Arduino Core 3.x API <code>ledcAttach(pin, 5000, 8)</code> directly binding GPIO pins 25, 26, and 27 without manual channel indexing.</span>
+            </li>
+            <li>
+              <strong>Common-Cathode Modulation:</strong>
+              <span>Signals driven via <code>ledcWrite(pin, duty)</code>. Because the cathode is tied to GND, higher PWM duty cycle delivers higher average forward voltage across each diode anode.</span>
+            </li>
+            <li>
+              <strong>Gradual Transition Fading:</strong>
+              <span>The <code>fadeToColour()</code> routine interpolates across 50 progressive steps (<code>FADE_STEPS = 50</code>) to generate smooth cinematic fades between performance sections.</span>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         HARDWARE PARTS LIST & PIN TABLE
+         ═══════════════════════════════════════════ -->
+    <section class="specs-section" aria-labelledby="specs-heading">
+      <h2 id="specs-heading">Complete Parts List &amp; Pin Assignment</h2>
+      <p class="section-intro">
+        Every electronic component and its corresponding microcontroller interface from the project schematic:
+      </p>
+
+      <div class="grid-two">
+        <div class="card-detail">
+          <h3>Complete Parts List</h3>
+          <ul class="spec-list">
+            <li>
+              <strong>1 × ESP32 Microcontroller</strong>
+              <span>Espressif ESP32 DevKit C V4 with hardware PWM timers and LEDC peripheral controller.</span>
+            </li>
+            <li>
+              <strong>4 × Servo Motors</strong>
+              <span>TowerPro SG90 9g positional servo motors operating at 50 Hz PWM (Joints 1–4).</span>
+            </li>
+            <li>
+              <strong>1 × Common-Cathode RGB LED</strong>
+              <span>Multi-colour indicator with common cathode wired to GND and independent R, G, B anodes.</span>
+            </li>
+            <li>
+              <strong>3 × Resistors (220 Ω)</strong>
+              <span>Current-limiting resistors placed in series with the Red, Green, and Blue anodes.</span>
+            </li>
+            <li>
+              <strong>Wokwi Simulator &amp; Virtual Breadboard</strong>
+              <span>Simulated circuit canvas with 5V DC power rail and shared ground references.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card-detail">
+          <h3>Pin Assignment Schedule</h3>
+          <div class="table-wrapper">
+            <table class="pin-table">
+              <thead>
+                <tr>
+                  <th>Component</th>
+                  <th>Hardware Function</th>
+                  <th>ESP32 GPIO Pin</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Servo Motor 1 (Signal)</td>
+                  <td>Joint 1 — Base Azimuth Rotation</td>
+                  <td><code>GPIO 13</code></td>
+                </tr>
+                <tr>
+                  <td>Servo Motor 2 (Signal)</td>
+                  <td>Joint 2 — Shoulder Elevation</td>
+                  <td><code>GPIO 14</code></td>
+                </tr>
+                <tr>
+                  <td>Servo Motor 3 (Signal)</td>
+                  <td>Joint 3 — Elbow Flexion</td>
+                  <td><code>GPIO 18</code></td>
+                </tr>
+                <tr>
+                  <td>Servo Motor 4 (Signal)</td>
+                  <td>Joint 4 — Wrist Articulation</td>
+                  <td><code>GPIO 19</code></td>
+                </tr>
+                <tr>
+                  <td>RGB LED (Red Anode)</td>
+                  <td>LEDC PWM via 220 Ω resistor</td>
+                  <td><code>GPIO 25</code></td>
+                </tr>
+                <tr>
+                  <td>RGB LED (Green Anode)</td>
+                  <td>LEDC PWM via 220 Ω resistor</td>
+                  <td><code>GPIO 26</code></td>
+                </tr>
+                <tr>
+                  <td>RGB LED (Blue Anode)</td>
+                  <td>LEDC PWM via 220 Ω resistor</td>
+                  <td><code>GPIO 27</code></td>
+                </tr>
+                <tr>
+                  <td>RGB LED (Cathode)</td>
+                  <td>Common ground return</td>
+                  <td><code>GND</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         THE FOUR SERVO MOTORS & KINEMATICS
+         ═══════════════════════════════════════════ -->
+    <section class="deep-dive-section" aria-labelledby="servo-heading">
+      <h2 id="servo-heading">The Four Servo Motors in the Choreography</h2>
+      <p class="section-intro">
+        Each servo corresponds to an anatomical joint in the robotic chain, working in synergy to execute K-pop-inspired group formations:
+      </p>
+
+      <div class="joint-cards">
+        <article class="joint-card">
+          <div class="joint-header">
+            <span class="joint-tag">Joint 1</span>
+            <h4>Base (GPIO 13)</h4>
+          </div>
+          <p>
+            The horizontal foundation pivot. It rotates the entire arm horizontally across the stage, orchestrating wide directional sweeps and anchoring symmetrical poses.
+          </p>
+        </article>
+
+        <article class="joint-card">
+          <div class="joint-header">
+            <span class="joint-tag">Joint 2</span>
+            <h4>Shoulder (GPIO 14)</h4>
+          </div>
+          <p>
+            The primary elevation joint. It bears the cantilevered limb load, executing dramatic vertical strokes, deep crouching drops, and tall unison reaches.
+          </p>
+        </article>
+
+        <article class="joint-card">
+          <div class="joint-header">
+            <span class="joint-tag">Joint 3</span>
+            <h4>Elbow (GPIO 18)</h4>
+          </div>
+          <p>
+            The mid-limb articulation hinge. It flexes in complementary or opposing phase to the shoulder, producing dynamic zig-zag geometry and wave propagation.
+          </p>
+        </article>
+
+        <article class="joint-card">
+          <div class="joint-header">
+            <span class="joint-tag">Joint 4</span>
+            <h4>Wrist (GPIO 19)</h4>
+          </div>
+          <p>
+            The agile end-effector. With minimal mechanical inertia, it punctuates rhythm with snappy double-pumps, delicate playful bounces, and sharp final hits.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         RGB LED CHOREOGRAPHY TIMELINE
+         ═══════════════════════════════════════════ -->
+    <section class="choreography-section" aria-labelledby="choreo-heading">
+      <h2 id="choreo-heading">RGB LED Colour Choreographer Schedule</h2>
+      <p class="section-intro">
+        The common-cathode RGB LED synchronises with every beat of the performance, altering its colour palette to accentuate each movement style:
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="color-badge" style="--badge-color: #0066ff;"></div>
+          <div class="timeline-content">
+            <h4>Section 1: Starting Pose · Calm Blue</h4>
+            <p>
+              Centres all four joints at 90° before rising into an asymmetric ready stance. Accompanied by pure blue illumination (<code>R:0, G:0, B:255</code>).
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="color-badge" style="--badge-color: #ff007f;"></div>
+          <div class="timeline-content">
+            <h4>Section 2: Synchronised Hit · Hot Pink</h4>
+            <p>
+              All four joints strike identical angles in unison followed by a fast double-pump beat under high-energy hot pink (<code>R:255, G:0, B:100</code>).
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="color-badge" style="--badge-color: #00ff99;"></div>
+          <div class="timeline-content">
+            <h4>Section 3: Side-to-Side Sway · Mint Green</h4>
+            <p>
+              Odd-numbered joints (1 &amp; 3) tilt oppositely to even-numbered joints (2 &amp; 4), swapping back and forth to mint green (<code>R:0, G:255, B:100</code>).
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="color-badge" style="--badge-color: #ff9900;"></div>
+          <div class="timeline-content">
+            <h4>Section 4: Sequential Wave / Ripple · Warm Orange</h4>
+            <p>
+              A fluid wave ripples sequentially along the arm (1 → 2 → 3 → 4) and returns (4 → 3 → 2 → 1) against glowing warm orange (<code>R:255, G:150, B:0</code>).
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="color-badge" style="--badge-color: #ffee00;"></div>
+          <div class="timeline-content">
+            <h4>Section 5: Playful Bounce · Bright Yellow</h4>
+            <p>
+              High-tempo criss-cross bounces and fast micro-oscillations deliver playful dance ad-libs under radiant yellow (<code>R:255, G:255, B:0</code>).
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="color-badge" style="--badge-color: #b300ff;"></div>
+          <div class="timeline-content">
+            <h4>Section 6: Final Pose &amp; Curtain · Regal Purple to Black</h4>
+            <p>
+              A slow majestic spread snaps into a sharp ending pose under regal purple (<code>R:200, G:0, B:255</code>), bursts into a bright white flash, and fades to black.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Navigation Bar & Colophon -->
+    <footer class="colophon-block">
+      <div class="colophon-actions">
+        <a href="/" class="btn btn-secondary">
+          <span class="btn-icon" aria-hidden="true">←</span>
+          <span>Return to Homepage</span>
+        </a>
+        <a href="https://wokwi.com/projects/481763271436010497" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <span>Open Public Wokwi Project</span>
+          <svg class="btn-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 3h7v7M13 3L7 9M3 6v7a1 1 0 001 1h7"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="colophon-text">
+        <span>Tomb of Knowledge · Private Archive</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>Homework 10 Embedded Project</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>ESP32 PWM Choreographer</span>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
